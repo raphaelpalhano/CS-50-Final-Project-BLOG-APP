@@ -1,7 +1,6 @@
 import os
 import secrets
 from PIL import Image
-from time import sleep
 from flask import render_template,  url_for, flash, redirect, request, abort
 from application import app, db, bcrypt
 from application.forms import RegistrationForm, LoginForm, UpdateAccountForm, \
@@ -176,3 +175,15 @@ def update_post(post_id):
     return render_template('posting.html',
                            title='Alterando Informações da Postagem',
                            form=form, legend='Alterar Informações')
+
+
+@app.route("/post/<int:post_id>/delete", methods=['GET', 'POST'])
+@login_required
+def delete_post(post_id):
+    post = Post.query.get_or_404(post_id)
+    if post.author != current_user:
+        abort(403)  # criar página de erro.
+    db.session.delete(post)
+    db.session.commit()
+    flash("Postagem deletada com sucesso!", 'success')
+    return redirect(url_for('index'))

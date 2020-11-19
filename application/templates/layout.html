@@ -17,7 +17,7 @@
 </head>
 <body>
     <header class="site-header">
-        <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
           <div class="container">
             <a class="navbar-brand mr-4" href="/">Direito Sem Preconceito</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,6 +31,10 @@
               <!-- Navbar Right Side -->
               <div class="navbar-nav">
                 {% if current_user.is_authenticated %}
+                <form class="form-inline my-2 my-lg-0">
+                  <input class="form-control mr-sm-2" type="search" placeholder="Nome do Título" aria-label="Search">
+                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
+                </form>
                   <a class="nav-item nav-link" href="{{ url_for('new_post') }}">Nova Postagem</a>
                   <a class="nav-item nav-link" href="{{ url_for('account') }}"> Minha Conta</a>
                   <a class="nav-item nav-link" href="{{ url_for('logout') }}">Sair</a>
