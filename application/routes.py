@@ -1,9 +1,11 @@
 import os
 import secrets
 from PIL import Image
-from flask import render_template,  url_for, flash, redirect, request
+from time import sleep
+from flask import render_template,  url_for, flash, redirect, request, abort
 from application import app, db, bcrypt
-from application.forms import RegistrationForm, LoginForm, UpdateAccountForm
+from application.forms import RegistrationForm, LoginForm, UpdateAccountForm, \
+    PostForm
 from application.models import User, Post
 from flask_login import login_user, current_user, logout_user, login_required
 
@@ -25,27 +27,14 @@ from flask_login import login_user, current_user, logout_user, login_required
 # os é forma do sistema operacional pode
 # ser utilizado para verificar a extensão do arquivo
 
-
-posts = [
-
-    {
-        'author': 'Jair Messias Bolsonaro',
-        'title': 'Blog Post 1',
-        'content': 'First post content',
-        'date_posted': 'Novembro, 02, 2020'
-    },
-
-    {
-        'author': 'Donald Trump',
-        'title': 'Blog Post 2',
-        'content': 'Second post content',
-        'date_posted': 'Novembro, 03, 2020'
-    }
-]
+# Postform é a class que contém a instância
+# de formulário de postagem (title, content)
 
 
 @app.route('/')
+@app.route('/index')
 def index():
+    posts = Post.query.all()
     return render_template('index.html', posts=posts, title='Inicío')
 
 
@@ -145,3 +134,45 @@ def account():
 
     return render_template('account.html', title='Conta',
                            image_file=image_file, form=form)
+
+
+@app.route('/post/new', methods=['GET', 'POST'])
+@login_required
+def new_post():
+    form = PostForm()
+    if form.validate_on_submit():
+        post = Post(title=form.title.data, content=form.content.data,
+                    author=current_user)
+        db.session.add(post)
+        db.session.commit()
+        flash('Conteúdo publicado com sucesso!', 'success')
+        return redirect(url_for('index'))
+    return render_template('posting.html', title='Novas Postagens',
+                           form=form, legend='Nova Postagem')
+
+
+@app.route("/post/<int:post_id>")
+def post(post_id):
+    post = Post.query.get_or_404(post_id)
+    return render_template('post.html', title=post.title, post=post)
+
+
+@app.route("/post/<int:post_id>/update", methods=['GET', 'POST'])
+@login_required
+def update_post(post_id):
+    post = Post.query.get_or_404(post_id)
+    if post.author != current_user:
+        abort(403)  # criar página de erro.
+    form = PostForm()
+    if form.validate_on_submit():
+        post.title = form.title.data
+        post.content = form.content.data
+        db.session.commit()
+        flash("Postagem atualizada com sucesso!", 'success')
+        return redirect(url_for('post', post_id=post.id))
+    elif request.method == 'GET':
+        form.title.data = post.title
+        form.content.data = post.content
+    return render_template('posting.html',
+                           title='Alterando Informações da Postagem',
+                           form=form, legend='Alterar Informações')
