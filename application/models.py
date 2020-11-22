@@ -2,6 +2,7 @@ from datetime import datetime
 from application import db, login_manager
 from flask_login import UserMixin
 
+
 # -=-=-=--=-=--=-=-Colunas do DB-=--=--=-=-=-
 # O primeiro username vai definir o usuário
 # O segundo vai definir o email maxímo 120 caracteres

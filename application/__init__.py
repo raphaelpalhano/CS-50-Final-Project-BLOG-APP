@@ -27,4 +27,5 @@ login_manager.login_view = 'login'
 login_manager.login_message_category = 'info'
 login_manager.login_message = 'Faça o login para acessar esse conteúdo!'
 
+
 from application import routes

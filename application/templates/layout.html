@@ -4,9 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <link href="{{url_for('static', filename='imagens/icon_law.png')}}" rel="icon">
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='main.css')}}">
+  
 
     {% if title %}
     <title> Direito Sem Preconceito - {{ title }}</title> <!--Atualizador de sub-titulo-->
@@ -31,14 +34,14 @@
               <!-- Navbar Right Side -->
               <div class="navbar-nav">
                 {% if current_user.is_authenticated %}
-                <form class="form-inline my-2 my-lg-0">
-                  <input class="form-control mr-sm-2" type="search" placeholder="Nome do Título" aria-label="Search">
-                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
-                </form>
-                  <a class="nav-item nav-link" href="{{ url_for('new_post') }}">Nova Postagem</a>
-                  <a class="nav-item nav-link" href="{{ url_for('account') }}"> Minha Conta</a>
-                  <a class="nav-item nav-link" href="{{ url_for('logout') }}">Sair</a>
-
+                    <form action="" method="POST" autocomplete="off" class="form-inline">
+                    <input type="text" class="form-control mr-sm-2" name="tag" id="tag" placeholder="Palavra chave">
+                    <input type="submit"  value="Pesquisar" class="btn btn-outline-success my-2 my-sm-0" name="">
+                    </form>
+                    <a class="nav-item nav-link" href="{{ url_for('new_post') }}">Nova Postagem</a>
+                    <a class="nav-item nav-link" href="{{ url_for('account') }}"> Minha Conta</a>
+                    <a class="nav-item nav-link" href="{{ url_for('logout') }}">Sair</a>
+                    
                 {% else %}
                   <a class="nav-item nav-link" href="{{ url_for('login') }}">Entrar</a>
                   <a class="nav-item nav-link" href="{{ url_for('register') }}">Criar Conta</a>
