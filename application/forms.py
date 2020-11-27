@@ -98,3 +98,21 @@ class PostForm(FlaskForm):
     content = TextAreaField('Mensagem', validators=[
                             DataRequired(), Length(min=20, max=10000)])
     submit = SubmitField('Publicar')
+
+
+class RequestResetForm(FlaskForm):
+    email = StringField('Email', validators=[DataRequired(), Email()])
+    submit = SubmitField('Enviar')
+
+    def validate_email(self, email):
+        user = User.query.filter_by(email=email.data).first()
+        if user is None:
+            raise ValidationError("Informe um email válido!")
+
+
+class ResetPasswordForm(FlaskForm):
+    password = PasswordField('Nova Senha', validators=[DataRequired()])
+    confirm_password = PasswordField(
+        'Confirmar Nova Senha',
+        validators=[DataRequired(), EqualTo('password')])
+    submit = SubmitField('Mudar Senha')

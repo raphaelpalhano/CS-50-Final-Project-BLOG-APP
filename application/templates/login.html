@@ -64,10 +64,13 @@ por meio do url_for('login').
         form.remember.label(class="form-check-label") }}
       </div>
     </fieldset>
-    <div class="form-group">{{form.submit(class="btn btn-outline-info")}}</div>
-    <small class="text-muted ml-2">
-      <a href="#">Esqueceu a Senha?</a>
-    </small>
+    <div class="form-group">
+      {{form.submit(class="btn btn-outline-info")}}
+      <small class="text-muted ml-2">
+        <a href="{{url_for('reset_request')}}">Esqueceu a Senha?</a>
+      </small>
+    </div>
+
   </form>
 </div>
 <div class="border-top pt-3">

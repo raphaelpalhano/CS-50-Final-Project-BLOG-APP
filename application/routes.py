@@ -2,11 +2,12 @@ import os
 import secrets
 from PIL import Image
 from flask import render_template,  url_for, flash, redirect, request, abort
-from application import app, db, bcrypt
+from application import app, db, bcrypt, mail
 from application.forms import RegistrationForm, LoginForm, UpdateAccountForm, \
-    PostForm
+    PostForm, RequestResetForm, ResetPasswordForm
 from application.models import User, Post
 from flask_login import login_user, current_user, logout_user, login_required
+from flask_mail import Message
 
 
 # form metodo de formulário, que irá gerar automaticamente no HTML
@@ -29,6 +30,8 @@ from flask_login import login_user, current_user, logout_user, login_required
 # Postform é a class que contém a instância
 # de formulário de postagem (title, content)
 
+# PIL é o modulo que trabalha com imagens, adaptando sua foram e condições.
+
 
 @app.route('/', methods=['GET', 'POST'], defaults={"page": 1})
 @app.route('/<int:page>', methods=['GET', 'POST'])
@@ -48,6 +51,8 @@ def index(page):
         return render_template('index.html', posts=posts, tag=tag)
 
     return render_template('index.html', posts=posts, title='Inicío')
+
+# rota para direcionar a página sobre o app
 
 
 @app.route('/about')
@@ -76,6 +81,8 @@ def register():
 
     return render_template('register.html', title='Cadastrar', form=form)
 
+# acessar conta (login)
+
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -97,6 +104,8 @@ def login():
             flash('Não foi possível acessar sua conta.\
                 Por favor verifique seu email e senha', 'danger')
     return render_template('login.html', title='Entrar', form=form)
+
+# rota para sair do app
 
 
 @app.route('/logout')
@@ -122,6 +131,8 @@ def save_picture(form_picture):
 
     return picture_fn
 
+# rota para criar conta
+
 
 @app.route('/account', methods=['GET', 'POST'])
 @login_required
@@ -146,6 +157,8 @@ def account():
     return render_template('account.html', title='Conta',
                            image_file=image_file, form=form)
 
+# rota para inserir a postagem
+
 
 @app.route('/post/new', methods=['GET', 'POST'])
 @login_required
@@ -161,6 +174,8 @@ def new_post():
     return render_template('posting.html', title='Novas Postagens',
                            form=form, legend='Nova Postagem')
 
+# rota para verificar o acesso do usuário ao post específico
+
 
 @app.route("/post/<int:post_id>")
 def post(post_id):
@@ -168,6 +183,7 @@ def post(post_id):
     return render_template('post.html', title=post.title, post=post)
 
 
+# rota para modificar o post
 @app.route("/post/<int:post_id>/update", methods=['GET', 'POST'])
 @login_required
 def update_post(post_id):
@@ -188,6 +204,8 @@ def update_post(post_id):
                            title='Alterando Informações da Postagem',
                            form=form, legend='Alterar Informações')
 
+# Rota para excluir o post
+
 
 @app.route("/post/<int:post_id>/delete", methods=['GET', 'POST'])
 @login_required
@@ -200,6 +218,8 @@ def delete_post(post_id):
     flash("Postagem deletada com sucesso!", 'success')
     return redirect(url_for('index'))
 
+# rota para paginação
+
 
 @app.route("/user/<string:username>")
 def user_posts(username):
@@ -209,3 +229,57 @@ def user_posts(username):
         .order_by(Post.date_posted.desc())\
         .paginate(page=page, per_page=5)
     return render_template('user_posts.html', posts=posts, user=user)
+
+
+def send_reset_email(user):
+    token = user.get_reset_token()
+    msg = Message('Requisição de mudança de senha',
+                  sender='raphael-angel@hotmail.com', recipients=[user.email])
+    msg.body = f"""Para mudar sua senha, acesse o seguinte site:
+{url_for('reset_token', token=token, _external=True)}
+
+Se você não fez essa requisição para mudar sua senha apenas ignore essa
+mensagem e não faça nenhuma alteração.
+"""
+    mail.send(msg)
+
+
+# rota requisição de troca de senha (vai gerar um token 30min)
+
+
+@app.route('/reset_password', methods=['GET', 'POST'])
+def reset_request():
+    if current_user.is_authenticated:
+        return redirect(url_for('index'))
+    form = RequestResetForm()
+    if form.validate_on_submit():
+        user = User.query.filter_by(email=form.email.data).first()
+        send_reset_email(user)
+        flash("Acabamos de enviar um e-mail com instruções\
+              para que você possa efetuar sua alteração de senha.", 'info')
+        return redirect(url_for('login'))
+    return render_template('request_reset_pass.html', form=form,
+                           title='Mudando Senha')
+
+
+# rota para utilizar o POST e aplicar a alteração da senha
+@app.route('/reset_password/<token>', methods=['GET', 'POST'])
+def reset_token(token):
+    if current_user.is_authenticated:
+        return redirect(url_for('index'))
+    user = User.verify_reset_token(token)
+    if user is None:
+        flash("Sua solicitação de troca de senha expirou.\
+              Faça uma nova requisição!", 'warning')
+        return redirect(url_for('reset_request'))
+    form = ResetPasswordForm()
+    if form.validate_on_submit():
+        hashed_password = bcrypt.generate_password_hash(
+            form.password.data).decode('utf-8')
+        user.password = hashed_password
+        db.session.commit()
+        flash('Você acabou de mudar sua senha com sucesso!',
+              'success')
+        return redirect(url_for('login'))
+    return render_template('reset_token.html', form=form,
+                           title='Mudando Senha')

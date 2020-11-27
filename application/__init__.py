@@ -1,7 +1,9 @@
+import os
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
+from flask_mail import Mail
 
 
 # SECRET_KEY chave para configuração dos cookie de segurança, aplicado
@@ -17,6 +19,11 @@ from flask_login import LoginManager
 # flask_login é o modulo que irá criar a instância para o usuário,
 # por meio da função LoginManager.
 
+# =============================================#
+# flask_mail é a extensão de API para gerar o servidor de email com TLS
+# Vai ter um servidor específico para esse email de troca de senha
+# com a porta 587 e usuário e senha para acessar.
+
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '1c8e5a7647c74da5d98be7c624c9f373'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
@@ -26,6 +33,11 @@ login_manager = LoginManager(app)
 login_manager.login_view = 'login'
 login_manager.login_message_category = 'info'
 login_manager.login_message = 'Faça o login para acessar esse conteúdo!'
-
+app.config['MAIL_SERVER'] = 'smtp.googlemail.com'
+app.config['MAIL_PORT'] = 587
+app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USERNAME'] = os.environ.get('EMAIL_USER')
+app.config['MAIL_PASSWORD'] = os.environ.get('EMAIL_PASS')
+mail = Mail(app)
 
 from application import routes
