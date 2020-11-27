@@ -16,7 +16,7 @@
 # Sobre
 <p class="text-justify"> 
 Blog com sistema de post e pesquisa, em que o estudande poderá criar sua conta e modficar seu perfil, fazer suas postagens e modifica-las quando quiser. 
-O objetivo aqui é ajudar o acadêmico da área de direito, pois atualmente estou me formando na área e percebi uma grande falta de uma comunidade fraterna que se com conhecimento teórico e prático.
+O objetivo aqui é ajudar o acadêmico da área de direito, pois atualmente estou me formando na área e percebi uma grande falta de uma comunidade fraterna que compartilhe conhecimentos teóricos e práticos.
 </p>
 
 
