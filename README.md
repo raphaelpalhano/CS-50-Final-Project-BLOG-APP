@@ -1,4 +1,4 @@
-<h1 align="center">CS50 PROJETO FINAL <a  href="https://cs50.harvard.edu/x/2020/project/#:~:text=https://www.howtogeek.com/205742/how-to-record-your-windows-mac-linux-android-or-ios-screen/"></a> </h1> <br>
+<h1 align="center">CS50 PROJETO FINAL <a  href="https://cs50.harvard.edu/x/2020/project/#:~:text=https://www.howtogeek.com/205742/how-to-record-your-windows-mac-linux-android-or-ios-screen/">CS50</a> </h1> <br>
  
 
  
@@ -9,7 +9,7 @@
 
 ## DESCRIÇÃO 
 <img src="https://img.shields.io/badge/BLOG-DIREITO%20SEM%20PRECONCEITO-7159c1"/>
-<p align="center">Trata-se de um projeto iniciado a partir  dos estudos feitos no CS50, que tem por objtivo de integrar o direito com a programação.</p><br>
+<p>Trata-se de um projeto iniciado a partir  dos estudos feitos no CS50, que tem por objtivo de integrar o direito com a programação.</p><br>
 
 
 
