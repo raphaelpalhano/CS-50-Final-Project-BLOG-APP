@@ -1,7 +1,6 @@
 <h1 align="center">CS50 PROJETO FINAL <a  href="https://cs50.harvard.edu/x/2020/project/#:~:text=https://www.howtogeek.com/205742/how-to-record-your-windows-mac-linux-android-or-ios-screen/">CS50</a> </h1> <br>
  
 
- 
 
 <h2 align="center">
     <a href="#">🔗 Direito Sem Preconceito</a>
@@ -16,7 +15,8 @@
 
 # Sobre
 <p class="text-justify"> 
-Blog com sistema de post e pesquisa, e futuramente com sistema de criar petições para estudante praticarem. O objetivo aqui é ajudar o acadêmico da área do direito, pois atualmente estou me formando na área e percebi uma grande falta de uma comunidade fraterna que se com conhecimento teórico e prático.
+Blog com sistema de post e pesquisa, em que o estudande poderá criar sua conta e modficar seu perfil, fazer suas postagens e modifica-las quando quiser. 
+O objetivo aqui é ajudar o acadêmico da área de direito, pois atualmente estou me formando na área e percebi uma grande falta de uma comunidade fraterna que se com conhecimento teórico e prático.
 </p>
 
 
