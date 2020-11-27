@@ -1,4 +1,5 @@
-<h1 align="center">CS50 PROJETO FINAL <a>https://cs50.harvard.edu/x/2020/project/#:~:text=https://www.howtogeek.com/205742/how-to-record-your-windows-mac-linux-android-or-ios-screen/</a> </h1> <br>
+<h1 align="center">CS50 PROJETO FINAL <a  href="https://cs50.harvard.edu/x/2020/project/#:~:text=https://www.howtogeek.com/205742/how-to-record-your-windows-mac-linux-android-or-ios-screen/"></a> </h1> <br>
+ 
 
  
 
@@ -11,14 +12,6 @@
 <p align="center">Trata-se de um projeto iniciado a partir  dos estudos feitos no CS50, que tem por objtivo de integrar o direito com a programação.</p><br>
 
 
-<h3 align="center"> Tabela de Conteúdos do Blog </h3>
-<!--ts-->
-   * [Sobre](#Sobre)
-   * [Instalação](#Instalação)
-   * [Como usar](#como-usar)
-      * [Pre Requisitos](#Pré-requisitos)
-   * [Tecnologias](#Tecnologias)
-<!--te-->
 
 
 # Sobre
@@ -91,9 +84,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 
 
-### CONTRIBUIDORES
+### Contribuidores
 
-<p>A colaboração com o material de estudo foi imprescendível para finalização do projeto. </p>
-<p> Corey Schafer <a>https://github.com/CoreyMSchafer </a></p>
-
+<p>A colaboração com o material de estudo foi imprescendível para finalização do projeto. <a  href="https://github.com/CoreyMSchafer">COREYMSCHAFER</a></p>
 
