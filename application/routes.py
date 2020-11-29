@@ -131,6 +131,7 @@ def save_picture(form_picture):
 
     return picture_fn
 
+
 # rota para criar conta
 
 
