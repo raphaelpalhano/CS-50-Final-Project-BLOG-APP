@@ -85,31 +85,41 @@ $ python run.py
 
 # Demonstração da Aplicação
 
-- [Painel]
+- <strong>PAINEL PRINCIPAL</strong>
+
+<img src="application/static/imagens/painel.png"/>
+
+
+- <strong>SOBRE</strong>
+
+<img src="application/static/imagens/SOBRE.png"/>
+
+
+- <strong>CRIAR CONTA</strong>
 
 <img src="application/static/imagens/CRIAR CONTA.png"/>
 
-- [Sobre]
+
+- <strong>ACESSAR</strong>
+
+<img src="application/static/imagens/ENTRAR.png"/>
+
+
+- <strong>PRIMEIRO ACESSO</strong>
+
+<img src="application/static/imagens/Acessodousuario.png"/>
+
+
+- <strong>EDITANDO PERFIL</strong>
+
+<img src="application/static/imagens/editandoperfil.png"/>
 
 
 
-- [Criar_Conta]
+- <strong>POST</strong>
 
+<img src="application/static/imagens/POST.png"/>
 
-
-- [Entrar]
-
-
-
-- [Primeiro_acesso]
-
-
-
-- [Editando_perfil]
-
-
-
-- [Post]
 
 
 
