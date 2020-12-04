@@ -87,7 +87,7 @@ $ python run.py
 
 - [Painel]
 
-<img src="CS50_final/blog_app/application/static/imagens/painel.png"/>
+<img src="CS-50-Final-Project-BLOG-APP/blob/main/application/static/imagens/CRIAR%20CONTA.png"/>
 
 - [Sobre]
 
