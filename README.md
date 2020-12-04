@@ -86,9 +86,9 @@ $ python run.py
 # Demonstração da Aplicação
 
 - [Painel]
-<p align="center">
+
 <img src="application/static/imagens/CRIAR CONTA.png"/>
-</p>
+
 - [Sobre]
 
 
