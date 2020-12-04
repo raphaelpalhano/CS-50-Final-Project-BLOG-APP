@@ -87,7 +87,7 @@ $ python run.py
 
 - [Painel]
 
-<img src="CS50_final\blog_app\application\static\imagens\painel.png" alt="Painel Principal"/>
+<img src="CS50_final/blog_app/application/static/imagens/painel.png"/>
 
 - [Sobre]
 
