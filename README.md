@@ -87,38 +87,38 @@ $ python run.py
 
 - <strong>PAINEL PRINCIPAL</strong>
 
-<img src="application/static/imagens/painel.png"/>
+<img src="application/static/imagens/painel.png"/><br>
 
 
 - <strong>SOBRE</strong>
 
-<img src="application/static/imagens/SOBRE.png"/>
+<img src="application/static/imagens/SOBRE.png"/><br>
 
 
 - <strong>CRIAR CONTA</strong>
 
-<img src="application/static/imagens/CRIAR CONTA.png"/>
+<img src="application/static/imagens/CRIAR CONTA.png"/><br>
 
 
 - <strong>ACESSAR</strong>
 
-<img src="application/static/imagens/ENTRAR.png"/>
+<img src="application/static/imagens/ENTRAR.png"/><br>
 
 
 - <strong>PRIMEIRO ACESSO</strong>
 
-<img src="application/static/imagens/Acessodousuario.png"/>
+<img src="application/static/imagens/Acessodousuario.png"/><br>
 
 
 - <strong>EDITANDO PERFIL</strong>
 
-<img src="application/static/imagens/editandoperfil.png"/>
+<img src="application/static/imagens/editandoperfil.png"/><br>
 
 
 
 - <strong>POST</strong>
 
-<img src="application/static/imagens/POST.png"/>
+<img src="application/static/imagens/POST.png"/><br>
 
 
 
