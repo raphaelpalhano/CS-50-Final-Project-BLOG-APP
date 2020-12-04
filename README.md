@@ -21,7 +21,7 @@ O objetivo aqui é ajudar o acadêmico da área de direito, pois atualmente esto
 
 
 
-### Features
+# Features
 
 - [x] Cadastro de usuário
 - [x] Login com troca de senha 
@@ -57,22 +57,23 @@ $ cd blog_app
 $ pip install flask
 $ pip install flask
 $ pip install flask_sqlalchemy
-$ pip installflask_bcrypt
+$ pip install flask_bcrypt
 $ pip install flask_login
 $ pip install flask_mail
 $ pip install PIL
+$ pip install wtforms 
 
 
 
 # Execute a aplicação em modo de desenvolvimento
 $ python run.py
 
-# O servidor inciará na porta:127.0000.00 - 
+# O servidor inciará na porta:http://127.0.0.1:5000/ - 
 ```
 
 
-### Tecnologias
-As seguintes ferramentas foram usadas na construção do projeto:
+# Tecnologias
+<strong>As seguintes ferramentas foram usadas na construção do projeto:</strong>
 
 - [Python](https://www.python.org/)
 - [Flask](https://flask.palletsprojects.com/en/1.1.x/)
@@ -82,9 +83,37 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - [CSS-Bootsrap](https://getbootstrap.com/docs/4.5/components/alerts/)
 
 
+# Demonstração da Aplicação
+
+- [Painel]
+
+<img src="blog_app/application/static/imagens/painel.png" alt="Painel Principal"/>
+
+- [Sobre]
 
 
-### Contribuidores
 
-<p>A colaboração com o material de estudo foi imprescendível para finalização do projeto. <a  href="https://github.com/CoreyMSchafer">COREYMSCHAFER</a></p>
+- [Criar_Conta]
+
+
+
+- [Entrar]
+
+
+
+- [Primeiro_acesso]
+
+
+
+- [Editando_perfil]
+
+
+
+- [Post]
+
+
+
+# Contribuidores
+
+<strong>A colaboração com o material de estudo foi imprescendível para finalização do projeto. <a  href="https://github.com/CoreyMSchafer">COREYMSCHAFER</a></strong>
 

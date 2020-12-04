@@ -1,0 +1,53 @@
+
+
+ROUTES -===================================================
+
+# form metodo de formulário, que irá gerar automaticamente no HTML
+# RegistrationForm é a instância de formulário de registro
+
+# flash para gerar uma mensagem de aviso
+
+# url_for vai acessar a função direta da aplicação
+#  e sincronizar o html com flask
+
+# login_required é a função que estabelecerá a condição de estar logado
+# para acessar o conteúdo
+
+# UpdateAccountForm é uma que se aplica para
+# atualizar o perfil do usuário
+
+# os é forma do sistema operacional pode
+# ser utilizado para verificar a extensão do arquivo
+
+# Postform é a class que contém a instância
+# de formulário de postagem (title, content)
+
+# PIL é o modulo que trabalha com imagens, adaptando sua foram e condições.
+
+
+
+FORMS -=================================-
+
+# Criando o campo de usuário da classe form
+# validators garatem que o campo não ficará vazio
+# DataRequired se aplicar como bool para verificar
+# se está vazio ou não o campo de text.
+
+# Lenght irá verificar se a string username está com min 2 e max 20 caracteres.
+
+# Email é um verificador de email, se é válido ou não.
+
+# Equalto aplica para verificar se o password
+# é igual ao confirm passsword
+
+# Passwordfiel função que irá gerar
+# as regras de um password
+
+# SubmitFiel é o botão para enviar as informações.
+
+# BooleanField será utilizado como um botão que salva
+#  automatícamente os dados de entrada.
+
+# Security será necessário uma chave,
+# para proteger contra a modificação de cookeis
+

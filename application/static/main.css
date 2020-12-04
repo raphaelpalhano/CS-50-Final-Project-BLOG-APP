@@ -3,10 +3,13 @@ body {
     color: #333333;
     margin-top: 5rem;
   }
+
   
   h1, h2, h3, h4, h5, h6 {
     color: #444444;
   }
+
+ 
   
   .bg-steel {
     background-color: #5f788a;
@@ -31,7 +34,7 @@ body {
     border-radius: 3px;
     margin-bottom: 20px;
   }
-  
+
   .article-title {
     color: #444444;
   }
@@ -79,4 +82,3 @@ body {
     font-size: 2.5rem;
   }
 
-  
