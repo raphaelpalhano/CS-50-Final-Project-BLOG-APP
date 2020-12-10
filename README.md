@@ -100,7 +100,7 @@ $ python run.py
 
 - <strong>CRIAR CONTA</strong>
 
-<img src="application/static/imagens/Ccriarconta.png"/><br><br><br>
+<img src="application/static/imagens/criarconta.png"/><br><br><br>
 
 
 - <strong>ACESSAR</strong>
