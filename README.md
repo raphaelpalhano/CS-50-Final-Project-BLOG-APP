@@ -31,6 +31,9 @@ O objetivo aqui é ajudar o acadêmico da área de direito, pois atualmente esto
 - [x] Sistema de perfil
 - [x] Sistema de alteração de perfil
 - [x] Sistema de paginação
+- [x] Painel único para Blog e para Estudo
+- [x] Sistema de disciplinas com teses aleatórias
+
 
 
 
