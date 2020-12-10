@@ -151,3 +151,10 @@ $ python run.py
 
 <strong>A colaboração com o material de estudo foi imprescendível para finalização do projeto. <a  href="https://github.com/CoreyMSchafer">COREYMSCHAFER</a></strong>
 
+
+# Desenvolvedor do Projeto
+
+<strong> Raphael Angel Palhano </strong>
+<p class="text-justify"> Sou estudante de direito mas amante de tecnologia. Estou desenvolvendo essa ferramenta para acadêmicos de direito melhorarem sua escrita e prática no desenvolvimento de peças </p>
+
+
