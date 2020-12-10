@@ -6,7 +6,7 @@
     <a href="#">🔗 Direito Sem Preconceito</a>
 </h2>
 
-## DESCRIÇÃO 
+# DESCRIÇÃO 
 <img src="https://img.shields.io/badge/BLOG-DIREITO%20SEM%20PRECONCEITO-7159c1"/>
 <p>Trata-se de um projeto iniciado a partir  dos estudos feitos no CS50, que tem por objtivo de integrar o direito com a programação.</p><br>
 
@@ -61,8 +61,12 @@ $ pip install flask_login
 $ pip install flask_mail
 $ pip install PIL
 $ pip install wtforms 
+$ pip install flask_ckeditor
 
 
+Acessando - venv: .\CS50_final\Scripts\Activate.ps1 
+
+Entrando no diretório: cd CS50_final; cd blog_app.
 
 # Execute a aplicação em modo de desenvolvimento
 $ python run.py
@@ -86,39 +90,57 @@ $ python run.py
 
 - <strong>PAINEL PRINCIPAL</strong>
 
-<img src="application/static/imagens/painel.png"/><br><br><br>
+<img src="application/static/imagens/painelblog.png"/><br><br><br>
 
 
 - <strong>SOBRE</strong>
 
-<img src="application/static/imagens/SOBRE.png"/><br><br><br>
+<img src="application/static/imagens/sobre.png"/><br><br><br>
 
 
 - <strong>CRIAR CONTA</strong>
 
-<img src="application/static/imagens/CRIAR CONTA.png"/><br><br><br>
+<img src="application/static/imagens/Ccriarconta.png"/><br><br><br>
 
 
 - <strong>ACESSAR</strong>
 
-<img src="application/static/imagens/ENTRAR.png"/><br><br><br>
+<img src="application/static/imagens/acessarconta.png"/><br><br><br>
 
 
 - <strong>PRIMEIRO ACESSO</strong>
 
-<img src="application/static/imagens/Acessodousuario.png"/><br><br><br>
-
-
-- <strong>EDITANDO PERFIL</strong>
-
-<img src="application/static/imagens/editandoperfil.png"/><br><br><br>
+<img src="application/static/imagens/primeiroacesso.png"/><br><br><br>
 
 
 
 - <strong>POST</strong>
 
-<img src="application/static/imagens/POST.png"/><br><br><br>
+<img src="application/static/imagens/post.png"/><br><br><br>
 
+
+
+
+- <strong>EDITANDO PERFIL</strong>
+
+<img src="application/static/imagens/alterarperfil.png"/><br><br><br>
+
+
+- <strong>EDITANDO POST</strong>
+
+<img src="application/static/imagens/editandopost.png"/><br><br><br>
+
+
+- <strong>PRATICAR - LISTA DE DISCIPLINAS</strong>
+
+<img src="application/static/imagens/listadisciplinas.png"/><br><br><br>
+
+
+- <strong>ATIVIDADE - DESENVOLVENDO PEÇA OAB</strong>
+
+<img src="application/static/imagens/exerciciotese.png"/><br><br><br>
+
+<p> Essa atividade está ligada totalmente a prática da OAB, em que é passado uma tese e o aluno tem que desenvolver a peça. </p>
 
 
 
