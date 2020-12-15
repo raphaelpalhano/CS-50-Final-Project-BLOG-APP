@@ -65,6 +65,8 @@ $ pip install flask_mail
 $ pip install PIL
 $ pip install wtforms 
 $ pip install flask_ckeditor
+$ pip install email_validator
+$ pip install flask_wtf
 
 
 Acessando - venv: .\CS50_final\Scripts\Activate.ps1 
